@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eleksyon 2025 – Data Analytics Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<nav>
+  <div class="logo">Eleksyon 2025</div>
+  <ul>
+    <li><a href="#metrics">Metrics</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#findings">Findings</a></li>
+    <li><a href="#methodology">Methodology</a></li>
+    <li><a href="#tools">Tools</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">7Analytics · Power BI Activity</div>
+  <h1>Philippine <span class="accent">Elections</span><br/>2025 <span class="red">Data</span> Dashboard</h1>
+  <p class="hero-sub">An interactive data analysis of the 2025 Philippine local and national election results using real COMELEC data, built with Power BI.</p>
+  <div class="hero-meta">
+    <div class="pill">Dataset: COMELEC via Kaggle</div>
+    <div class="pill">combined_local.csv</div>
+    <div class="pill">Star Schema Model</div>
+    <div class="pill">6 DAX Measures</div>
+  </div>
+  <div class="scroll-hint">↓ scroll to explore</div>
+</div>
+
+<hr class="divider" />
+
+<section id="metrics">
+  <div class="section-label fade-in">Key Metrics</div>
+  <h2 class="section-title fade-in">At a Glance</h2>
+  <p class="section-desc fade-in">Six core measures computed using DAX formulas inside Power BI to summarize the entire election dataset.</p>
+
+  <div class="metrics-grid fade-in">
+    <div class="metric-card">
+      <div class="metric-label">Total Registered Voters</div>
+      <div class="metric-value gold">17bn</div>
+      <div class="metric-note">All registered across precincts</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Total Actual Voters</div>
+      <div class="metric-value">14bn</div>
+      <div class="metric-note">Voters who cast their ballots</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Number of Candidates</div>
+      <div class="metric-value">41K</div>
+      <div class="metric-note">Unique candidates in dataset</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Total Votes</div>
+      <div class="metric-value">1bn</div>
+      <div class="metric-note">Votes received across all races</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Highest Vote Count</div>
+      <div class="metric-value gold">993</div>
+      <div class="metric-note">Most votes by a single candidate</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Average Turnout</div>
+      <div class="metric-value red">3.31%</div>
+      <div class="metric-note">Avg. turnout across municipalities</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="dashboard">
+  <div class="section-label fade-in">Power BI Dashboard</div>
+  <h2 class="section-title fade-in">The Full Dashboard</h2>
+  <p class="section-desc fade-in">Built in Power BI Report View with slicers for Province, Municipality, and Contest Type. All visuals respond to filters interactively.</p>
+
+  <div class="dashboard-frame fade-in">
+    <img src="dashboard.png" alt="Philippine Elections 2025 Power BI Dashboard" />
+    <div class="dashboard-caption">
+      Philippine Elections 2025 – Local Elections Dashboard &nbsp;·&nbsp; Source: COMELEC via Kaggle &nbsp;·&nbsp; Built with Power BI Desktop
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="findings">
+  <div class="section-label fade-in">Analysis</div>
+  <h2 class="section-title fade-in">Key Findings</h2>
+  <p class="section-desc fade-in">Observations drawn from the dashboard visuals and data exploration.</p>
+
+  <div class="findings-grid">
+    <div class="finding-card blue fade-in">
+      <div class="finding-num">01</div>
+      <div class="finding-title">Cebu Led All Provinces in Total Votes</div>
+      <div class="finding-text">The bar chart shows Cebu ranking first among all provinces in total vote count, followed closely by Cavite. This reflects both population density and high voter participation in these areas.</div>
+    </div>
+    <div class="finding-card gold fade-in">
+      <div class="finding-num">02</div>
+      <div class="finding-title">Go, Bong Go Topped the Candidate Chart</div>
+      <div class="finding-text">Among all candidates, Bong Go (PDPLBN) received the highest total votes approaching 30 million, followed by Aquino, Bam (KNP) and Dela Rosa, Bato (PDPLBN). All top candidates are nationally known figures.</div>
+    </div>
+    <div class="finding-card red fade-in">
+      <div class="finding-num">03</div>
+      <div class="finding-title">National Races Outpaced Local in Volume</div>
+      <div class="finding-text">The donut chart reveals that National contest types accounted for roughly 59.96% of total votes (657M), while Local races made up 40.04% (439M). This is expected since national races cover the entire electorate.</div>
+    </div>
+    <div class="finding-card blue fade-in">
+      <div class="finding-num">04</div>
+      <div class="finding-title">Map Shows Luzon as the Activity Hotspot</div>
+      <div class="finding-text">The municipality map highlights dense clusters of voter activity in the Luzon region, with several municipalities marked in red as high-turnout areas. Geographic spread confirms nationwide participation.</div>
+    </div>
+    <div class="finding-card gold fade-in">
+      <div class="finding-num">05</div>
+      <div class="finding-title">Average Turnout Metric Needs Revisiting</div>
+      <div class="finding-text">The Average Turnout shows 3.31%. This means that on average, roughly 3.31% of registered voters per municipality record participated — a figure that reflects precinct-level granularity rather than the total national turnout rate.</div>
+    </div>
+    <div class="finding-card red fade-in">
+      <div class="finding-num">06</div>
+      <div class="finding-title">Slicers Confirm the Model is Working</div>
+      <div class="finding-text">All three slicers (Province, Municipality, Contest Type) successfully filter every visual on the page, confirming that the one-to-many relationships in the star schema are functioning correctly.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="methodology">
+  <div class="section-label fade-in">Process</div>
+  <h2 class="section-title fade-in">Data Methodology</h2>
+  <p class="section-desc fade-in">How the raw COMELEC data was cleaned, modeled, and prepared for analysis.</p>
+
+  <div class="sub-label fade-in">Data Cleaning — Power Query Editor</div>
+  <div class="method-steps fade-in" style="margin-bottom:3rem;">
+    <div class="method-step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <div class="step-title">Removed Blank Rows</div>
+        <div class="step-desc">Rows with missing candidate names and null vote values were filtered out to prevent inaccurate aggregations and empty card visuals in the dashboard.</div>
+      </div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <div class="step-title">Checked and Corrected Data Types</div>
+        <div class="step-desc">Numerical columns (votes, registered_voters, actual_voters, percentage) were set to decimal or whole number types. Text columns were set to Text type to prevent sorting and filter errors.</div>
+      </div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <div class="step-title">Removed Duplicate Records</div>
+        <div class="step-desc">Duplicate rows were identified and removed to prevent double-counting of votes or candidate entries during aggregation.</div>
+      </div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <div class="step-title">Removed the voting_center Column</div>
+        <div class="step-desc">Dropped as it was too granular for the planned dashboard visuals and not referenced in any metrics.</div>
+      </div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <div class="step-title">Standardized Text Formatting</div>
+        <div class="step-desc">Text.Proper was applied to province, municipality, barangay, contest_type, and contest_name to ensure consistent capitalization across all records.</div>
+      </div>
+    </div>
+    <div class="method-step">
+      <div class="step-num">06</div>
+      <div class="step-content">
+        <div class="step-title">Added location_key Column</div>
+        <div class="step-desc">A custom column combining province and municipality was created in both cleaned_local and location_dim. Formula: [province] &amp; " | " &amp; [municipality]. This resolved the many-to-many relationship issue.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label fade-in">Data Modeling — Star Schema</div>
+  <div class="schema-wrap fade-in" style="margin-bottom:3rem;">
+    <div class="schema-table">
+      <div class="schema-head dim">location_dim</div>
+      <div class="schema-fields">
+        <div class="schema-field"><span class="pk">PK</span> location_key</div>
+        <div class="schema-field">province</div>
+        <div class="schema-field">municipality</div>
+      </div>
+    </div>
+    <div class="schema-arrow">1 →*</div>
+    <div class="schema-table fact">
+      <div class="schema-head">cleaned_local (fact)</div>
+      <div class="schema-fields">
+        <div class="schema-field"><span class="fk">FK</span> location_key</div>
+        <div class="schema-field"><span class="fk">FK</span> candidate</div>
+        <div class="schema-field">votes</div>
+        <div class="schema-field">registered_voters</div>
+        <div class="schema-field">actual_voters</div>
+        <div class="schema-field">percentage</div>
+        <div class="schema-field">contest_name</div>
+        <div class="schema-field">contest_type</div>
+        <div class="schema-field">barangay</div>
+      </div>
+    </div>
+    <div class="schema-arrow">*← 1</div>
+    <div class="schema-table">
+      <div class="schema-head dim">candidate_dim</div>
+      <div class="schema-fields">
+        <div class="schema-field"><span class="pk">PK</span> candidate</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-label fade-in">DAX Measures</div>
+  <div class="dax-grid fade-in">
+    <div class="dax-card">
+      <div class="dax-name">Total Registered Voters</div>
+      <div class="dax-formula">= SUM(cleaned_local[registered_voters])</div>
+      <div class="dax-desc">Sum of all registered voters across every precinct and location.</div>
+    </div>
+    <div class="dax-card">
+      <div class="dax-name">Total Actual Voters</div>
+      <div class="dax-formula">= SUM(cleaned_local[actual_voters])</div>
+      <div class="dax-desc">Sum of voters who actually cast their votes on election day.</div>
+    </div>
+    <div class="dax-card">
+      <div class="dax-name">Average Turnout</div>
+      <div class="dax-formula">= AVERAGE(cleaned_local[percentage])</div>
+      <div class="dax-desc">Average voter turnout percentage across all municipalities.</div>
+    </div>
+    <div class="dax-card">
+      <div class="dax-name">Total Votes</div>
+      <div class="dax-formula">= SUM(cleaned_local[votes])</div>
+      <div class="dax-desc">Total votes received by all candidates in all contests.</div>
+    </div>
+    <div class="dax-card">
+      <div class="dax-name">Highest Vote Count</div>
+      <div class="dax-formula">= MAX(cleaned_local[votes])</div>
+      <div class="dax-desc">The highest number of votes received by any single candidate.</div>
+    </div>
+    <div class="dax-card">
+      <div class="dax-name">Number of Candidates</div>
+      <div class="dax-formula">= DISTINCTCOUNT(cleaned_local[candidate])</div>
+      <div class="dax-desc">Total count of unique candidates across all contest types.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section id="tools">
+  <div class="section-label fade-in">Stack</div>
+  <h2 class="section-title fade-in">Tools Used</h2>
+  <p class="section-desc fade-in">All tools used in building this project from raw data to final dashboard.</p>
+
+  <div class="tools-grid">
+    <div class="tool-card fade-in">
+      <span class="tool-icon">📊</span>
+      <div class="tool-name">Power BI Desktop</div>
+      <div class="tool-desc">Main platform for data modeling, DAX measures, and building the interactive dashboard report.</div>
+    </div>
+    <div class="tool-card fade-in">
+      <span class="tool-icon">🔧</span>
+      <div class="tool-name">Power Query Editor</div>
+      <div class="tool-desc">Used for all data cleaning and transformation steps before loading into the model.</div>
+    </div>
+    <div class="tool-card fade-in">
+      <span class="tool-icon">🗂️</span>
+      <div class="tool-name">Data Model View</div>
+      <div class="tool-desc">Used to set up the star schema and define one-to-many relationships between tables.</div>
+    </div>
+    <div class="tool-card fade-in">
+      <span class="tool-icon">🧮</span>
+      <div class="tool-name">DAX</div>
+      <div class="tool-desc">Data Analysis Expressions used to write all six calculated measures for the KPI cards.</div>
+    </div>
+    <div class="tool-card fade-in">
+      <span class="tool-icon">📂</span>
+      <div class="tool-name">Kaggle</div>
+      <div class="tool-desc">Source platform for the Philippine Elections 2025 dataset by gelcloudy (COMELEC data).</div>
+    </div>
+    <div class="tool-card fade-in">
+      <span class="tool-icon">🌐</span>
+      <div class="tool-name">GitHub Pages</div>
+      <div class="tool-desc">Used to host and present this documentation website for the 7Analytics activity.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Philippine Elections 2025 &nbsp;·&nbsp; Data Analytics Dashboard &nbsp;·&nbsp; <span>7Analytics Activity</span> &nbsp;·&nbsp; City College of Angeles</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
