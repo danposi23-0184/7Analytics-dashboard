@@ -9,6 +9,8 @@ This project is a data analytics activity using real election data from the 2025
 
 The full documentation website is live at:
 **[View the Dashboard Documentation Site →](https://danposi23-0184.github.io/7Analytics-dashboard/)**
+**[Download the pbix→](https://drive.google.com/file/d/1qMXushlSabvKSvL9d1QILn9SSGtPTAaq/view?usp=sharing)**
+**[View our Documentation on gdocx→](https://docs.google.com/document/d/1oTqiiBnp8u-q2vWt4lcpU-3MNzyHW3Zynm9S13P6zPg/edit?usp=sharing)**
 
 ---
 
@@ -51,19 +53,7 @@ All cleaning was done inside Power Query Editor in Power BI.
 
 The project uses a **star schema** with one fact table and two dimension tables.
 
-```
-location_dim          cleaned_local (fact)        candidate_dim
-─────────────    1──*  ──────────────────────  *──1  ─────────────
-location_key  ──────── location_key (FK)            candidate (PK)
-province               candidate (FK)
-municipality           votes
-                       registered_voters
-                       actual_voters
-                       percentage
-                       contest_name
-                       contest_type
-                       barangay
-```
+![Star Schema](star_schema.png)
 
 Both relationships are **one-to-many** with **single cross-filter direction**.
 
@@ -73,9 +63,9 @@ Both relationships are **one-to-many** with **single cross-filter direction**.
 
 | Measure | Formula |
 |---|---|
-| Total Registered Voters | `SUM(cleaned_local[registered_voters])` |
+| Total Registered Voters | `COUNTROWS(cleaned_local[registered_voters])` |
 | Total Actual Voters | `SUM(cleaned_local[actual_voters])` |
-| Average Turnout | `AVERAGE(cleaned_local[percentage])` |
+| Average Turnout | `AVERAGE(cleaned_local[percentage]) / 100` |
 | Total Votes | `SUM(cleaned_local[votes])` |
 | Highest Vote Count | `MAX(cleaned_local[votes])` |
 | Number of Candidates | `DISTINCTCOUNT(cleaned_local[candidate])` |
@@ -91,9 +81,7 @@ Both relationships are **one-to-many** with **single cross-filter direction**.
 | Number of Candidates | 41K |
 | Total Votes | 1bn |
 | Highest Vote Count | 993 |
-| Average Turnout | 331% |
-
-> **Note on Average Turnout:** The 331% value is abnormal and indicates the percentage column in the source data is stored as a whole integer rather than a decimal. This is a known data quality issue in the original dataset.
+| Average Turnout | 3.31% |
 
 ---
 
