@@ -8,9 +8,11 @@
 This project is a data analytics activity using real election data from the 2025 Philippine national and local elections. The dataset was sourced from Kaggle and originally comes from COMELEC. The goal was to clean the data, build a proper data model, compute key metrics using DAX, and present the findings through an interactive Power BI dashboard.
 
 The full documentation website is live at:
-**[View the Dashboard Documentation Site →](https://danposi23-0184.github.io/7Analytics-dashboard/)**
+**[View the Dashboard Documentation Site →](https://danposi23-0184.github.io/7Analytics-dashboard/)** 
+
 **[Download the pbix→](https://drive.google.com/file/d/1qMXushlSabvKSvL9d1QILn9SSGtPTAaq/view?usp=sharing)**
-**[View our Documentation on gdocx→](https://docs.google.com/document/d/1oTqiiBnp8u-q2vWt4lcpU-3MNzyHW3Zynm9S13P6zPg/edit?usp=sharing)**
+
+**[View our Documentation on gdocx explaining each steps and how the 3 frameworks were used for this dataset→](https://docs.google.com/document/d/1oTqiiBnp8u-q2vWt4lcpU-3MNzyHW3Zynm9S13P6zPg/edit?usp=sharing)**
 
 ---
 
