@@ -44,12 +44,12 @@
   <div class="metrics-grid fade-in">
     <div class="metric-card">
       <div class="metric-label">Total Registered Voters</div>
-      <div class="metric-value gold">17bn</div>
+      <div class="metric-value gold">23M</div>
       <div class="metric-note">All registered across precincts</div>
     </div>
     <div class="metric-card">
       <div class="metric-label">Total Actual Voters</div>
-      <div class="metric-value">14bn</div>
+      <div class="metric-value">23M</div>
       <div class="metric-note">Voters who cast their ballots</div>
     </div>
     <div class="metric-card">
@@ -59,7 +59,7 @@
     </div>
     <div class="metric-card">
       <div class="metric-label">Total Votes</div>
-      <div class="metric-value">1bn</div>
+      <div class="metric-value">23M</div>
       <div class="metric-note">Votes received across all races</div>
     </div>
     <div class="metric-card">
@@ -227,12 +227,12 @@
     </div>
     <div class="dax-card">
       <div class="dax-name">Total Actual Voters</div>
-      <div class="dax-formula">= SUM(cleaned_local[actual_voters])</div>
+      <div class="dax-formula">= COUNTROW(cleaned_local[actual_voters])</div>
       <div class="dax-desc">Sum of voters who actually cast their votes on election day.</div>
     </div>
     <div class="dax-card">
       <div class="dax-name">Average Turnout</div>
-      <div class="dax-formula">= AVERAGE(cleaned_local[percentage])</div>
+      <div class="dax-formula">= AVERAGE(cleaned_local[percentage]/100)</div>
       <div class="dax-desc">Average voter turnout percentage across all municipalities.</div>
     </div>
     <div class="dax-card">
